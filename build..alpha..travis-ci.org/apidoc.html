@@ -1,0 +1,848 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/SydneyStockholm/imgr"
+
+    >imgr (v0.10.4)</a>
+</h1>
+<h4>Image resizing, cropping, optimisation and serving</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imgr">module imgr</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imgr.IMGR">
+            function <span class="apidocSignatureSpan">imgr.</span>IMGR
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imgr.IMGR.prototype.load">
+            function <span class="apidocSignatureSpan">imgr.</span>IMGR.prototype.load
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imgr.IMGR.prototype.serve">
+            function <span class="apidocSignatureSpan">imgr.</span>IMGR.prototype.serve
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imgr.size">
+            function <span class="apidocSignatureSpan">imgr.</span>size
+            <span class="apidocSignatureSpan">(path, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imgr.</span>IMGR.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imgr.</span>converter</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imgr.</span>server</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imgr.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imgr.IMGR">module imgr.IMGR</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imgr.IMGR.IMGR">
+            function <span class="apidocSignatureSpan">imgr.</span>IMGR
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imgr.IMGR.prototype">module imgr.IMGR.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imgr.IMGR.prototype.load">
+            function <span class="apidocSignatureSpan">imgr.IMGR.prototype.</span>load
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imgr.IMGR.prototype.serve">
+            function <span class="apidocSignatureSpan">imgr.IMGR.prototype.</span>serve
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">imgr.IMGR.prototype.</span>BOTTOM</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">imgr.IMGR.prototype.</span>CENTRE</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">imgr.IMGR.prototype.</span>LEFT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">imgr.IMGR.prototype.</span>RIGHT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">imgr.IMGR.prototype.</span>TOP</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imgr.IMGR.prototype.load">module imgr.IMGR.prototype.load</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imgr.IMGR.prototype.load.load">
+            function <span class="apidocSignatureSpan">imgr.IMGR.prototype.</span>load
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imgr.IMGR.prototype.serve">module imgr.IMGR.prototype.serve</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imgr.IMGR.prototype.serve.serve">
+            function <span class="apidocSignatureSpan">imgr.IMGR.prototype.</span>serve
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imgr.converter">module imgr.converter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imgr.converter.Converter">
+            function <span class="apidocSignatureSpan">imgr.converter.</span>Converter
+            <span class="apidocSignatureSpan">(image, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imgr.server">module imgr.server</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imgr.server.Server">
+            function <span class="apidocSignatureSpan">imgr.server.</span>Server
+            <span class="apidocSignatureSpan">(path, options, imgr)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imgr.size">module imgr.size</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imgr.size.size">
+            function <span class="apidocSignatureSpan">imgr.</span>size
+            <span class="apidocSignatureSpan">(path, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imgr.utils">module imgr.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imgr.utils.concurrent">
+            function <span class="apidocSignatureSpan">imgr.utils.</span>concurrent
+            <span class="apidocSignatureSpan">(prototype, fn_name, concurrency)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imgr.utils.createSet">
+            function <span class="apidocSignatureSpan">imgr.utils.</span>createSet
+            <span class="apidocSignatureSpan">(arr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imgr.utils.floodProtection">
+            function <span class="apidocSignatureSpan">imgr.utils.</span>floodProtection
+            <span class="apidocSignatureSpan">(prototype, fn_name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imgr.utils.md5">
+            function <span class="apidocSignatureSpan">imgr.utils.</span>md5
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imgr.utils.mergeDefaults">
+            function <span class="apidocSignatureSpan">imgr.utils.</span>mergeDefaults
+            <span class="apidocSignatureSpan">(options, defaults)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imgr" id="apidoc.module.imgr">module imgr</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imgr.IMGR" id="apidoc.element.imgr.IMGR">
+        function <span class="apidocSignatureSpan">imgr.</span>IMGR
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">IMGR = function (options) {
+    this.options = utils.mergeDefaults(options, default_options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imgr.IMGR.prototype.load" id="apidoc.element.imgr.IMGR.prototype.load">
+        function <span class="apidocSignatureSpan">imgr.</span>IMGR.prototype.load
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">IMGR.prototype.load = function (path) {
+    return new Converter(path, this.options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imgr.IMGR.prototype.serve" id="apidoc.element.imgr.IMGR.prototype.serve">
+        function <span class="apidocSignatureSpan">imgr.</span>IMGR.prototype.serve
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">IMGR.prototype.serve = function (path) {
+    return new Server(path, this.options, this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imgr.size" id="apidoc.element.imgr.size">
+        function <span class="apidocSignatureSpan">imgr.</span>size
+        <span class="apidocSignatureSpan">(path, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">size = function (path, callback) {
+    var stream = fs.createReadStream(path);
+    imagesize(stream, function (err, dimensions) {
+        if (err) err = new Error(&#x27;The image dimensions could not be determined (the image may be invalid).&#x27;);
+        stream.destroy();
+        callback(err, dimensions);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        if (!operation.width &#x26;&#x26; !operation.height &#x26;&#x26; !operation.factor &#x26;&#x26; !operation.crop_width) {
+return self.copy(self.image, output, function (err) {
+    return self.finalise(err);
+});
+        }
+
+        //Get the current image dimensions
+        self.<span class="apidocCodeKeywordSpan">size</span>(self.image, function (err, size) {
+if (err || !size) {
+    return self.finalise(err || &#x27;Failed to obtain image dimensions&#x27;);
+}
+
+//Adaptive resizing
+if (operation.width &#x26;&#x26; operation.height &#x26;&#x26; typeof operation.crop_width === &#x27;undefined&#x27;) {
+    var original_ar = size.width / size.height
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imgr.IMGR" id="apidoc.module.imgr.IMGR">module imgr.IMGR</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imgr.IMGR.IMGR" id="apidoc.element.imgr.IMGR.IMGR">
+        function <span class="apidocSignatureSpan">imgr.</span>IMGR
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">IMGR = function (options) {
+    this.options = utils.mergeDefaults(options, default_options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imgr.IMGR.prototype" id="apidoc.module.imgr.IMGR.prototype">module imgr.IMGR.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imgr.IMGR.prototype.load" id="apidoc.element.imgr.IMGR.prototype.load">
+        function <span class="apidocSignatureSpan">imgr.IMGR.prototype.</span>load
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function (path) {
+    return new Converter(path, this.options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    self.options.trace(&#x27;missing_original&#x27;);
+    return callback();
+}
+
+self.info(&#x27;compiling %s&#x27;, dest);
+
+//Resize / crop as necessary
+var imgr = self.imgr.<span class="apidocCodeKeywordSpan">load</span>(src, self.options);
+if (parameters.width) {
+    if (parameters.height) {
+        self.options.trace(&#x27;resize_adaptive&#x27;);
+        imgr.adaptiveResize(parameters.width, parameters.height, parameters.orientation);
+    } else {
+        self.options.trace(&#x27;resize_width&#x27;);
+        imgr.resizeToWidth(parameters.width);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imgr.IMGR.prototype.serve" id="apidoc.element.imgr.IMGR.prototype.serve">
+        function <span class="apidocSignatureSpan">imgr.IMGR.prototype.</span>serve
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">serve = function (path) {
+    return new Server(path, this.options, this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+IMGR runs as [express](http://expressjs.com) middleware and requires [GraphicsMagick](http://www.graphicsmagick.org/)
+
+```javascript
+var IMGR = require(&#x27;imgr&#x27;).IMGR;
+
+var imgr = new IMGR;
+
+imgr.<span class="apidocCodeKeywordSpan">serve</span>(&#x27;/path/to/images&#x27;)
+    .namespace(&#x27;/images&#x27;)
+    .urlRewrite(&#x27;/:path/:size/:file.:ext&#x27;)
+    .whitelist([ &#x27;200x300&#x27;, &#x27;100x100&#x27; ])
+    .using(express_app);
+```
+
+Now */path/to/images/foobar.jpg* can be accessed using
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imgr.IMGR.prototype.load" id="apidoc.module.imgr.IMGR.prototype.load">module imgr.IMGR.prototype.load</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imgr.IMGR.prototype.load.load" id="apidoc.element.imgr.IMGR.prototype.load.load">
+        function <span class="apidocSignatureSpan">imgr.IMGR.prototype.</span>load
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function (path) {
+    return new Converter(path, this.options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    self.options.trace(&#x27;missing_original&#x27;);
+    return callback();
+}
+
+self.info(&#x27;compiling %s&#x27;, dest);
+
+//Resize / crop as necessary
+var imgr = self.imgr.<span class="apidocCodeKeywordSpan">load</span>(src, self.options);
+if (parameters.width) {
+    if (parameters.height) {
+        self.options.trace(&#x27;resize_adaptive&#x27;);
+        imgr.adaptiveResize(parameters.width, parameters.height, parameters.orientation);
+    } else {
+        self.options.trace(&#x27;resize_width&#x27;);
+        imgr.resizeToWidth(parameters.width);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imgr.IMGR.prototype.serve" id="apidoc.module.imgr.IMGR.prototype.serve">module imgr.IMGR.prototype.serve</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imgr.IMGR.prototype.serve.serve" id="apidoc.element.imgr.IMGR.prototype.serve.serve">
+        function <span class="apidocSignatureSpan">imgr.IMGR.prototype.</span>serve
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">serve = function (path) {
+    return new Server(path, this.options, this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+IMGR runs as [express](http://expressjs.com) middleware and requires [GraphicsMagick](http://www.graphicsmagick.org/)
+
+```javascript
+var IMGR = require(&#x27;imgr&#x27;).IMGR;
+
+var imgr = new IMGR;
+
+imgr.<span class="apidocCodeKeywordSpan">serve</span>(&#x27;/path/to/images&#x27;)
+    .namespace(&#x27;/images&#x27;)
+    .urlRewrite(&#x27;/:path/:size/:file.:ext&#x27;)
+    .whitelist([ &#x27;200x300&#x27;, &#x27;100x100&#x27; ])
+    .using(express_app);
+```
+
+Now */path/to/images/foobar.jpg* can be accessed using
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imgr.converter" id="apidoc.module.imgr.converter">module imgr.converter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imgr.converter.Converter" id="apidoc.element.imgr.converter.Converter">
+        function <span class="apidocSignatureSpan">imgr.converter.</span>Converter
+        <span class="apidocSignatureSpan">(image, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Converter = function (image, options) {
+    this.image = image;
+    this.options = utils.mergeDefaults(options, default_options);
+    this.gm = gm.subClass({ imageMagick: this.options.image_magick });
+    this.operation = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imgr.server" id="apidoc.module.imgr.server">module imgr.server</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imgr.server.Server" id="apidoc.element.imgr.server.Server">
+        function <span class="apidocSignatureSpan">imgr.server.</span>Server
+        <span class="apidocSignatureSpan">(path, options, imgr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Server = function (path, options, imgr) {
+    this.path = path;
+    this.imgr = imgr;
+    this.options = utils.mergeDefaults(options, default_options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imgr.size" id="apidoc.module.imgr.size">module imgr.size</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imgr.size.size" id="apidoc.element.imgr.size.size">
+        function <span class="apidocSignatureSpan">imgr.</span>size
+        <span class="apidocSignatureSpan">(path, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">size = function (path, callback) {
+    var stream = fs.createReadStream(path);
+    imagesize(stream, function (err, dimensions) {
+        if (err) err = new Error(&#x27;The image dimensions could not be determined (the image may be invalid).&#x27;);
+        stream.destroy();
+        callback(err, dimensions);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        if (!operation.width &#x26;&#x26; !operation.height &#x26;&#x26; !operation.factor &#x26;&#x26; !operation.crop_width) {
+return self.copy(self.image, output, function (err) {
+    return self.finalise(err);
+});
+        }
+
+        //Get the current image dimensions
+        self.<span class="apidocCodeKeywordSpan">size</span>(self.image, function (err, size) {
+if (err || !size) {
+    return self.finalise(err || &#x27;Failed to obtain image dimensions&#x27;);
+}
+
+//Adaptive resizing
+if (operation.width &#x26;&#x26; operation.height &#x26;&#x26; typeof operation.crop_width === &#x27;undefined&#x27;) {
+    var original_ar = size.width / size.height
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imgr.utils" id="apidoc.module.imgr.utils">module imgr.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imgr.utils.concurrent" id="apidoc.element.imgr.utils.concurrent">
+        function <span class="apidocSignatureSpan">imgr.utils.</span>concurrent
+        <span class="apidocSignatureSpan">(prototype, fn_name, concurrency)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">concurrent = function (prototype, fn_name, concurrency) {
+    var original = prototype[fn_name]
+      , running = 0
+      , pending = [];
+    prototype[fn_name] = function () {
+        pending.push([this, Array.prototype.slice.call(arguments)]);
+        (function next() {
+            while (pending.length &#x26;&#x26; running &#x3c; concurrency) {
+                var context = pending.shift()
+                  , scope = context[0]
+                  , args = context[1]
+                  , callback = args.pop();
+                args.push(function () {
+                    running--;
+                    process.nextTick(next);
+                    callback.apply(this, arguments);
+                });
+                running++;
+                original.apply(scope, args);
+            }
+        })();
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+};
+
+/**
+ * Manage concurrency.
+ */
+
+utils.<span class="apidocCodeKeywordSpan">concurrent</span>(Converter.prototype, &#x27;size&#x27;, 5);
+utils.floodProtection(Converter.prototype, &#x27;size&#x27;);
+utils.concurrent(Converter.prototype, &#x27;save&#x27;, 5);
+utils.floodProtection(Converter.prototype, &#x27;save&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imgr.utils.createSet" id="apidoc.element.imgr.utils.createSet">
+        function <span class="apidocSignatureSpan">imgr.utils.</span>createSet
+        <span class="apidocSignatureSpan">(arr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createSet = function (arr) {
+    var obj = {};
+    arr.forEach(function (elem) {
+        obj[elem] = 1;
+    });
+    return obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  , cache_static = base_static;
+if (cache_dir !== base_dir) {
+    cache_static = express.static(cache_dir, { maxAge: maxAge });
+}
+
+if (whitelist) {
+    info(&#x27;whitelist: [%s]&#x27;, whitelist.join(&#x27;, &#x27;));
+    whitelist = utils.<span class="apidocCodeKeywordSpan">createSet</span>(whitelist);
+}
+if (blacklist) {
+    info(&#x27;blacklist: [%s]&#x27;, blacklist.join(&#x27;, &#x27;));
+    blacklist = utils.createSet(blacklist);
+}
+
+function tryContentDirectory(request, response, next) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imgr.utils.floodProtection" id="apidoc.element.imgr.utils.floodProtection">
+        function <span class="apidocSignatureSpan">imgr.utils.</span>floodProtection
+        <span class="apidocSignatureSpan">(prototype, fn_name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">floodProtection = function (prototype, fn_name) {
+    var original = prototype[fn_name]
+      , queue = {};
+    prototype[fn_name] = function () {
+        var args = Array.prototype.slice.call(arguments)
+          , callback = args.pop()
+          , hash = fn_name + &#x27;:&#x27; + JSON.stringify(args);
+        if (hash in queue) {
+            queue[hash].push(callback);
+            return;
+        } else {
+            queue[hash] = [ callback ];
+        }
+        args.push(function () {
+            var result = Array.prototype.slice.call(arguments);
+            queue[hash].forEach(function (callback) {
+                callback.apply(null, result);
+            });
+            delete queue[hash];
+        });
+        original.apply(this, args);
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+/**
+ * Manage concurrency.
+ */
+
+utils.concurrent(Converter.prototype, &#x27;size&#x27;, 5);
+utils.<span class="apidocCodeKeywordSpan">floodProtection</span>(Converter.prototype, &#x27;size&#x27;);
+utils.concurrent(Converter.prototype, &#x27;save&#x27;, 5);
+utils.floodProtection(Converter.prototype, &#x27;save&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imgr.utils.md5" id="apidoc.element.imgr.utils.md5">
+        function <span class="apidocSignatureSpan">imgr.utils.</span>md5
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">md5 = function (str) {
+    return crypto.createHash(&#x27;md5&#x27;).update(str).digest(&#x27;hex&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imgr.utils.mergeDefaults" id="apidoc.element.imgr.utils.mergeDefaults">
+        function <span class="apidocSignatureSpan">imgr.utils.</span>mergeDefaults
+        <span class="apidocSignatureSpan">(options, defaults)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mergeDefaults = function (options, defaults) {
+    options = options || {};
+    for (var key in defaults) {
+        if (typeof options[key] === &#x27;undefined&#x27;) {
+            options[key] = defaults[key];
+        } else if (typeof defaults[key] === &#x27;object&#x27;) {
+            utils.mergeDefaults(options[key], defaults[key]);
+        }
+    }
+    return options;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*
+* @param {String} image - the image to load
+* @param {Object} options (optional)
+*/
+
+var Converter = exports.Converter = function (image, options) {
+   this.image = image;
+   this.options = utils.<span class="apidocCodeKeywordSpan">mergeDefaults</span>(options, default_options);
+   this.gm = gm.subClass({ imageMagick: this.options.image_magick });
+   this.operation = {};
+};
+
+/**
+* Resize an image to the specified width.
+*
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
