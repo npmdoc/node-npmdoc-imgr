@@ -1,4 +1,7 @@
-# api documentation for  [imgr (v0.10.4)](https://github.com/SydneyStockholm/imgr)  [![npm package](https://img.shields.io/npm/v/npmdoc-imgr.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-imgr) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-imgr.svg)](https://travis-ci.org/npmdoc/node-npmdoc-imgr)
+# npmdoc-imgr
+
+#### basic api documentation for  [imgr (v0.10.4)](https://github.com/SydneyStockholm/imgr)  [![npm package](https://img.shields.io/npm/v/npmdoc-imgr.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-imgr) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-imgr.svg)](https://travis-ci.org/npmdoc/node-npmdoc-imgr)
+
 #### Image resizing, cropping, optimisation and serving
 
 [![NPM](https://nodei.co/npm/imgr.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/imgr)
@@ -74,7 +77,8 @@
     "scripts": {
         "test": "make test"
     },
-    "version": "0.10.4"
+    "version": "0.10.4",
+    "bin": {}
 }
 ```
 
